@@ -127,13 +127,14 @@ export default defineUserConfig({
     //   algoliaOptions: { 'facetFilters': ["lang:$LANG"] },
     //   debug: false // Set debug to true if you want to inspect the dropdown
     // }
+    lang: 'zh-CN',
     algolia: {
-      appId: 'HS2BDF7NDD',
-      apiKey: 'da58b70b6db4aafdad898257ae605e9e',
-      indexName: 'vp-algolia'
+      appId: '2AKGS3UQUB',
+      apiKey: 'f5d0ca42bf7e210bd77c70af2c5a07dd',
+      indexName: 'vp-algolia',
       // inputSelector: '### REPLACE ME ####',
       // algoliaOptions: { 'facetFilters': ["lang:$LANG"] },
-      // debug: false // Set debug to true if you want to inspect the dropdown
+      // debug: true // Set debug to true if you want to inspect the dropdown
     },
   }),
   plugins: [
