@@ -119,14 +119,22 @@ export default defineUserConfig({
         },
       },
     },
+    // algolia: {
+    //   appId: "HS2BDF7NDD",
+    //   apiKey: "da58b70b6db4aafdad898257ae605e9e",
+    //   indexName: "vp_algolia",
+    //   inputSelector: '### REPLACE ME ####',
+    //   algoliaOptions: { 'facetFilters': ["lang:$LANG"] },
+    //   debug: false // Set debug to true if you want to inspect the dropdown
+    // }
     algolia: {
-      appId: "HS2BDF7NDD",
-      apiKey: "da58b70b6db4aafdad898257ae605e9e",
-      indexName: "vp_algolia",
-      inputSelector: '### REPLACE ME ####',
-      algoliaOptions: { 'facetFilters': ["lang:$LANG"] },
-      debug: false // Set debug to true if you want to inspect the dropdown
-    }
+      appId: 'HS2BDF7NDD',
+      apiKey: 'da58b70b6db4aafdad898257ae605e9e',
+      indexName: 'vp-algolia'
+      // inputSelector: '### REPLACE ME ####',
+      // algoliaOptions: { 'facetFilters': ["lang:$LANG"] },
+      // debug: false // Set debug to true if you want to inspect the dropdown
+    },
   }),
   plugins: [
     appendDatePlugin({
