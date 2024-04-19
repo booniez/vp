@@ -7,6 +7,7 @@ import { appendDatePlugin } from '@vuepress/plugin-append-date';
 import { copyCodePlugin } from '@vuepress/plugin-copy-code';
 import { mediumZoomPlugin } from '@vuepress/plugin-medium-zoom';
 import { seoPlugin } from '@vuepress/plugin-seo';
+import { sitemapPlugin } from '@vuepress/plugin-sitemap';
 
 export default defineUserConfig({
   title: "BitsofBrain",
@@ -134,6 +135,10 @@ export default defineUserConfig({
     }),
     seoPlugin({
       // 选项
+    }),
+    sitemapPlugin({
+      // 选项
+      hostname: 'https://booniez.cn'
     }),
   ],
   // debug: true,
