@@ -26,9 +26,8 @@ export default defineUserConfig({
     series: {
       "/docs/iOS/": [
         {
-          text: "测试",
+          text: "iOS方面",
           children: [
-            "分类/测试文章",
             "summary"
           ],
         },
