@@ -1,0 +1,53 @@
+name: Deploy static content to Pages
+
+on:
+  push:
+    branches: ["main"]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 16
+          cache: npm
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 7.3.0
+
+      - name: Install Dependencies
+        run: pnpm install
+
+      - name: Build Packages
+        run: pnpm run build
+
+#      - name: Build Docs
+#        run: pnpm run docs:build
+#
+#      - name: Deploy to GitHub Pages
+#        uses: crazy-max/ghaction-github-pages@v2
+#        with:
+#          repo: vuepress-reco/vuepress-reco.github.io
+#          target_branch: master
+#          build_dir: docs/.vuepress/dist
+#        env:
+#          GITHUB_TOKEN: ${{ secrets.PAGE_TOKEN }}
+
+      - name: Set up SSH key
+        run: |
+          mkdir -p ~/.ssh/
+          echo "${{ secrets.DEPLOY_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          echo "HOST is ${{ secrets.HOST }}"
+          ssh-keyscan -H ${{ secrets.HOST }} >> ~/.ssh/known_hosts
+
+      - name: clear server origin files
+        run: ssh ${{ secrets.USERNAME }}@${{ secrets.HOST }} "rm -rf ${{ secrets.REMOTE_FOLDER }}/*"
+
+      - name: Copy files to server
+        run: scp -P ${{ secrets.PORT }} -r .vuepress/dist/* ${{ secrets.USERNAME }}@${{ secrets.HOST }}:${{ secrets.REMOTE_FOLDER }}
