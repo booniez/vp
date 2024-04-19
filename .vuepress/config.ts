@@ -123,6 +123,9 @@ export default defineUserConfig({
   plugins: [
     docsearchPlugin({
       // 配置项
+      appId: "HS2BDF7NDD",
+      apiKey: "da58b70b6db4aafdad898257ae605e9e",
+      indexName: "vp"
     }),
     appendDatePlugin({
       format: 'full',
