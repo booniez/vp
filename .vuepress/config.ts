@@ -37,12 +37,12 @@ export default defineUserConfig({
         {
           text: "继承",
           children: [
-              "继承/1. 概述",
-              "继承/2. 特点",
-              "继承/3. super 和 this",
-              "继承/4. 方法重写",
-              "继承/5. 继承中构造方法访问特点",
-              "继承/6. 抽象类"
+              "extends/summary",
+              "extends/features",
+              "extends/super&this",
+              "extends/override",
+              "extends/construction-method-features",
+              "extends/abstract"
           ],
         }
       ],
@@ -147,5 +147,16 @@ export default defineUserConfig({
       hostname: 'https://booniez.cn'
     }),
   ],
+  // 打开过后会导致 algolia 检索不到内容
+  // 会默认给检索条件 form 里面加上 lang=zh-CN
+  // locales: {
+  //   // 键名是该语言所属的子路径
+  //   // 作为特例，默认语言可以使用 '/' 作为其路径。
+  //   '/': {
+  //     lang: 'zh-CN',
+  //     // title: 'VuePress',
+  //     // description: 'Vue 驱动的静态网站生成器',
+  //   },
+  // },
   // debug: true,
 });
