@@ -8,6 +8,7 @@ import { copyCodePlugin } from '@vuepress/plugin-copy-code';
 import { mediumZoomPlugin } from '@vuepress/plugin-medium-zoom';
 import { seoPlugin } from '@vuepress/plugin-seo';
 import { sitemapPlugin } from '@vuepress/plugin-sitemap';
+import { googleAnalyticsPlugin } from '@vuepress/plugin-google-analytics';
 
 export default defineUserConfig({
   title: "BitsofBrain",
@@ -148,6 +149,10 @@ export default defineUserConfig({
     sitemapPlugin({
       // 选项
       hostname: 'https://booniez.cn'
+    }),
+    googleAnalyticsPlugin({
+      // 配置项
+      id: 'G-Y9YKHTXLMM',
     }),
   ],
   // 打开过后会导致 algolia 检索不到内容
