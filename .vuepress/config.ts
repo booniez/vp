@@ -20,8 +20,7 @@ export default defineUserConfig({
     // logo: "/logo.png",
     author: "booniez",
     authorAvatar: "/WX20240411-145310@2x.png",
-    docsRepo: "https://github.com/vuepress-reco/vuepress-theme-reco-next",
-    lastUpdatedText: "",
+    lastUpdatedText: "最后更新时间",
     // series 为原 sidebar
     // autoSetSeries: true,
     head: [
@@ -61,6 +60,7 @@ export default defineUserConfig({
           { text: "Java", link: "/docs/Java/extends/summary" },
         ],
       },
+      { text: "about", link: "/docs/about/me" },
     ],
     bulletin: {
       
