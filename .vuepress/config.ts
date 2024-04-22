@@ -46,7 +46,8 @@ export default defineUserConfig({
               "extends/super&this",
               "extends/override",
               "extends/construction-method-features",
-              "extends/abstract"
+              "extends/abstract",
+						   "extends/polymorphism"
           ],
         }
       ],
