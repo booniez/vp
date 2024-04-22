@@ -12,7 +12,7 @@ import { googleAnalyticsPlugin } from '@vuepress/plugin-google-analytics';
 import { baiduAnalyticsPlugin } from '@vuepress/plugin-baidu-analytics';
 
 export default defineUserConfig({
-  title: "BitsofBrain",
+  title: "booniez",
   description: "思绪合集",
   bundler: viteBundler({}),
   theme: recoTheme({
