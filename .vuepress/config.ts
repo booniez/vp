@@ -60,7 +60,7 @@ export default defineUserConfig({
           { text: "Java", link: "/docs/Java/extends/summary" },
         ],
       },
-      { text: "about", link: "/docs/about/me" },
+      // { text: "about", link: "/docs/about/me" },
     ],
     bulletin: {
       
