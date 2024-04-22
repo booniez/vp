@@ -11,7 +11,7 @@ import { sitemapPlugin } from '@vuepress/plugin-sitemap';
 
 export default defineUserConfig({
   title: "BitsofBrain",
-  description: "Just playing around",
+  description: "思绪合集",
   bundler: viteBundler({}),
   theme: recoTheme({
     style: "@vuepress-reco/style-default",
@@ -19,11 +19,14 @@ export default defineUserConfig({
     author: "booniez",
     authorAvatar: "/WX20240411-145310@2x.png",
     docsRepo: "https://github.com/vuepress-reco/vuepress-theme-reco-next",
-    // docsBranch: "main",
-    // docsDir: "example",
     lastUpdatedText: "",
     // series 为原 sidebar
     // autoSetSeries: true,
+    head: [
+      [
+        'link',{ rel: 'icon', href: '/favicon.ico' }
+      ]
+    ],
     series: {
       "/docs/iOS/": [
         {
