@@ -46,8 +46,8 @@ jobs:
           echo "HOST is ${{ secrets.HOST }}"
           ssh-keyscan -H ${{ secrets.HOST }} >> ~/.ssh/known_hosts
 
-      - name: clear server origin files
-        run: ssh ${{ secrets.USERNAME }}@${{ secrets.HOST }} "rm -rf ${{ secrets.REMOTE_FOLDER }}/*"
+#      - name: clear server origin files
+#        run: ssh ${{ secrets.USERNAME }}@${{ secrets.HOST }} "rm -rf ${{ secrets.REMOTE_FOLDER }}/*"
 
       - name: Copy files to server
         run: scp -P ${{ secrets.PORT }} -r .vuepress/dist/* ${{ secrets.USERNAME }}@${{ secrets.HOST }}:${{ secrets.REMOTE_FOLDER }}

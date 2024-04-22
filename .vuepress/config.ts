@@ -9,6 +9,7 @@ import { mediumZoomPlugin } from '@vuepress/plugin-medium-zoom';
 import { seoPlugin } from '@vuepress/plugin-seo';
 import { sitemapPlugin } from '@vuepress/plugin-sitemap';
 import { googleAnalyticsPlugin } from '@vuepress/plugin-google-analytics';
+import { baiduAnalyticsPlugin } from '@vuepress/plugin-baidu-analytics';
 
 export default defineUserConfig({
   title: "BitsofBrain",
@@ -57,7 +58,7 @@ export default defineUserConfig({
         text: "Docs",
         children: [
           { text: "iOS", link: "/docs/iOS/summary" },
-          { text: "Java", link: "/docs/Java/summary" },
+          { text: "Java", link: "/docs/Java/extends/summary" },
         ],
       },
     ],
@@ -153,6 +154,10 @@ export default defineUserConfig({
     googleAnalyticsPlugin({
       // 配置项
       id: 'G-Y9YKHTXLMM',
+    }),
+    baiduAnalyticsPlugin({
+      // 配置项
+      id: '1eca8470f940050615326f382559c127',
     }),
   ],
   // 打开过后会导致 algolia 检索不到内容
