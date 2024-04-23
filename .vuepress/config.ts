@@ -177,6 +177,7 @@ export default defineUserConfig({
             "extends/abstract",
             "extends/code-block",
             "extends/interface",
+            "extends/polymorphism",
           ],
         }
       ],
