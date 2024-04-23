@@ -15,12 +15,58 @@ export default defineUserConfig({
   title: "booniez",
   description: "思绪合集",
   bundler: viteBundler({}),
+  plugins: [
+    appendDatePlugin({
+      format: 'full',
+    }),
+    copyCodePlugin({
+      // options
+    }),
+    mediumZoomPlugin({
+      // 配置项
+    }),
+    seoPlugin({
+      // 选项
+    }),
+    sitemapPlugin({
+      // 选项
+      hostname: 'https://booniez.cn'
+    }),
+    googleAnalyticsPlugin({
+      // 配置项
+      id: 'G-Y9YKHTXLMM',
+    }),
+    baiduAnalyticsPlugin({
+      // 配置项
+      id: '1eca8470f940050615326f382559c127',
+    }),
+    [
+      '@vuepress/last-updated',
+      {
+        dateOptions:{
+          hour12: false
+        }
+      }
+    ],
+  ],
+  // 打开过后会导致 algolia 检索不到内容
+  // 会默认给检索条件 form 里面加上 lang=zh-CN
+  locales: {
+    // 键名是该语言所属的子路径
+    // 作为特例，默认语言可以使用 '/' 作为其路径。
+    '/': {
+      lang: 'zh-CN',
+      // title: 'VuePress',
+      // description: 'Vue 驱动的静态网站生成器',
+    },
+  },
   theme: recoTheme({
     style: "@vuepress-reco/style-default",
     // logo: "/logo.png",
     author: "booniez",
     authorAvatar: "/WX20240411-145310@2x.png",
-    lastUpdatedText: "最后更新时间",
+    lastUpdatedText: "最后更新",
+    // lastUpdated: "最后更新",
     // series 为原 sidebar
     // autoSetSeries: true,
     head: [
@@ -28,29 +74,6 @@ export default defineUserConfig({
         'link',{ rel: 'icon', href: '/favicon.ico' }
       ]
     ],
-    series: {
-      "/docs/iOS/": [
-        {
-          text: "iOS方面",
-          children: [
-            "summary"
-          ],
-        },
-      ],
-      "/docs/Java/": [
-        {
-          text: "继承",
-          children: [
-              "extends/summary",
-              "extends/features",
-              "extends/super&this",
-              "extends/override",
-              "extends/construction-method-features",
-              "extends/abstract"
-          ],
-        }
-      ],
-    },
     navbar: [
       { text: "Home", link: "/" },
       {
@@ -133,43 +156,31 @@ export default defineUserConfig({
       // algoliaOptions: { 'facetFilters': ["lang:$LANG"] },
       debug: false // Set debug to true if you want to inspect the dropdown
     },
-  }),
-  plugins: [
-    appendDatePlugin({
-      format: 'full',
-    }),
-    copyCodePlugin({
-      // options
-    }),
-    mediumZoomPlugin({
-      // 配置项
-    }),
-    seoPlugin({
-      // 选项
-    }),
-    sitemapPlugin({
-      // 选项
-      hostname: 'https://booniez.cn'
-    }),
-    googleAnalyticsPlugin({
-      // 配置项
-      id: 'G-Y9YKHTXLMM',
-    }),
-    baiduAnalyticsPlugin({
-      // 配置项
-      id: '1eca8470f940050615326f382559c127',
-    }),
-  ],
-  // 打开过后会导致 algolia 检索不到内容
-  // 会默认给检索条件 form 里面加上 lang=zh-CN
-  locales: {
-    // 键名是该语言所属的子路径
-    // 作为特例，默认语言可以使用 '/' 作为其路径。
-    '/': {
-      lang: 'zh-CN',
-      // title: 'VuePress',
-      // description: 'Vue 驱动的静态网站生成器',
+    series: {
+      "/docs/iOS/": [
+        {
+          text: "iOS方面",
+          children: [
+            "summary"
+          ],
+        },
+      ],
+      "/docs/Java/": [
+        {
+          text: "继承",
+          children: [
+            "extends/summary",
+            "extends/features",
+            "extends/super&this",
+            "extends/override",
+            "extends/construction-method-features",
+            "extends/abstract",
+            "extends/code-block",
+            "extends/interface",
+          ],
+        }
+      ],
     },
-  },
+  }),
   // debug: true,
 });
