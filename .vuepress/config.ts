@@ -180,6 +180,12 @@ export default defineUserConfig({
             "extends/interface",
             "extends/polymorphism",
           ],
+        },
+        {
+          text: "mysql",
+          children: [
+            "mysql/mysql-conf",
+          ],
         }
       ],
     },
