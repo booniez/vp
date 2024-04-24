@@ -51,6 +51,7 @@ export default defineUserConfig({
   ],
   // 打开过后会导致 algolia 检索不到内容
   // 会默认给检索条件 form 里面加上 lang=zh-CN
+  // 清空了 algolia 数据，重新收集了 lang为zh-CN的数据集
   locales: {
     // 键名是该语言所属的子路径
     // 作为特例，默认语言可以使用 '/' 作为其路径。
