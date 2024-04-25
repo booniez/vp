@@ -82,6 +82,9 @@ export default defineUserConfig({
         children: [
           { text: "iOS", link: "/docs/iOS/summary" },
           { text: "Java", link: "/docs/Java/extends/summary" },
+          { text: "mysql", link: "/docs/mysql/mysql },
+          { text: "docker", link: "/docs/docker/docker" },
+
         ],
       },
       // { text: "about", link: "/docs/about/me" },
@@ -193,6 +196,22 @@ export default defineUserConfig({
             "docker/docker",
           ],
         }
+      ],
+      "/docs/mysql/": [
+        {
+          text: "mysql",
+          children: [
+            "mysql/mysql",
+          ],
+        },
+      ],
+      "/docs/docker/": [
+        {
+          text: "docker",
+          children: [
+            "docker/docker",
+          ],
+        },
       ],
     },
   }),
