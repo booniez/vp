@@ -186,6 +186,12 @@ export default defineUserConfig({
           children: [
             "mysql/mysql-conf",
           ],
+        },
+        {
+          text: "docker",
+          children: [
+            "docker/docker",
+          ],
         }
       ],
     },
