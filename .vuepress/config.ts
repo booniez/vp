@@ -82,7 +82,7 @@ export default defineUserConfig({
         children: [
           { text: "iOS", link: "/docs/iOS/summary" },
           { text: "Java", link: "/docs/Java/extends/summary" },
-          { text: "mysql", link: "/docs/mysql/mysql },
+          { text: "mysql", link: "/docs/mysql/mysql-conf" },
           { text: "docker", link: "/docs/docker/docker" },
 
         ],
@@ -184,24 +184,24 @@ export default defineUserConfig({
             "extends/polymorphism",
           ],
         },
-        {
-          text: "mysql",
-          children: [
-            "mysql/mysql-conf",
-          ],
-        },
-        {
-          text: "docker",
-          children: [
-            "docker/docker",
-          ],
-        }
+        // {
+        //   text: "mysql",
+        //   children: [
+        //     "mysql/mysql-conf",
+        //   ],
+        // },
+        // {
+        //   text: "docker",
+        //   children: [
+        //     "docker/docker",
+        //   ],
+        // }
       ],
       "/docs/mysql/": [
         {
           text: "mysql",
           children: [
-            "mysql",
+            "mysql-conf",
           ],
         },
       ],
