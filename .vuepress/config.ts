@@ -201,7 +201,7 @@ export default defineUserConfig({
         {
           text: "mysql",
           children: [
-            "mysql/mysql",
+            "mysql",
           ],
         },
       ],
@@ -209,7 +209,7 @@ export default defineUserConfig({
         {
           text: "docker",
           children: [
-            "docker/docker",
+            "docker",
           ],
         },
       ],
