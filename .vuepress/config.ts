@@ -27,6 +27,7 @@ export default defineUserConfig({
     }),
     seoPlugin({
       // 选项
+      hostname: 'https://booniez.cn'
     }),
     sitemapPlugin({
       // 选项

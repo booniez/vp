@@ -26,6 +26,7 @@ jobs:
       - name: Custome Components
         run: |
           cp ./src/components/Blog.vue ./node_modules/vuepress-theme-reco/lib/client/components/Home
+          cp ./src/components/Footer.vue ./node_modules/vuepress-theme-reco/lib/client/components/Home
 
       - name: Build Packages
         run: npm run build
