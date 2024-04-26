@@ -216,6 +216,12 @@ export default defineUserConfig({
             "config/ssh/ssh-config",
           ],
         },
+        {
+          text: "mac",
+          children: [
+            "config/mac/mac-config",
+          ],
+        },
       ],
     },
   }),
