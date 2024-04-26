@@ -210,6 +210,12 @@ export default defineUserConfig({
             "config/nginx/nginx-location",
           ],
         },
+        {
+          text: "ssh",
+          children: [
+            "config/ssh/ssh-config",
+          ],
+        },
       ],
     },
   }),
