@@ -1,7 +1,12 @@
 ---
 title: mysql
 date: 2024-04-24 16:14:58
+tags:
+ - mysql
+categories: 
+ - 后台
 ---
+
 
 ## mysql 常见问题
 

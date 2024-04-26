@@ -27,6 +27,7 @@ jobs:
         run: |
           cp ./src/components/Blog.vue ./node_modules/vuepress-theme-reco/lib/client/components/Home
           cp ./src/components/Footer.vue ./node_modules/vuepress-theme-reco/lib/client/components/Home
+          cp -r ./docs/* ./blogs/
 
       - name: Build Packages
         run: npm run build

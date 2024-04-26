@@ -1,6 +1,10 @@
 ---
 title: 配置 location
 date: 2024-04-26 10:05:29
+tags:
+ - nginx 
+categories:
+ - 服务器
 ---
 
 Nginx 的 `location` 指令用于定义URL匹配特定模式时处理请求的方式。这里有一些配置 `location` 的技巧：

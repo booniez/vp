@@ -1,6 +1,11 @@
 ---
 title: 接口
 date: 2024-04-22 15:41:44
+tags:
+- 继承
+categories:
+ - 后台
+ - Java
 ---
 
 - 接口中的变量默认会被 ``final`` 修饰

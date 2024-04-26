@@ -1,6 +1,11 @@
 ---
 title: 方法重写
 date: 2024-04-17 14:08:35
+tags:
+ - 继承
+categories:
+ - 后台
+ - Java
 ---
 
 ## 概述

@@ -1,6 +1,11 @@
 ---
 title: 抽象类
 date: 2024-04-18 17:36:08
+tags:
+ - 继承
+categories:
+ - 后台
+ - Java
 ---
 
 ## 概述

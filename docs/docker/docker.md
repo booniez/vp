@@ -1,6 +1,10 @@
 ---
 title: docker
 date: 2024-04-25 16:29:20
+tags:
+ - docker 
+categories:
+ - 服务器
 ---
 
 ## docker 相关

@@ -1,6 +1,10 @@
 ---
 title: 配置 gzip
 date: 2024-04-26 10:03:33
+tags:
+ - nginx 
+categories:
+ - 服务器
 ---
 
 ## 配置 gzip
