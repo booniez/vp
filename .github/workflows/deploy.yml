@@ -21,10 +21,14 @@ jobs:
           version: 7.3.0
 
       - name: Install Dependencies
-        run: pnpm install
+        run: npm install
+
+      - name: Custome Components
+        run: |
+          cp ./src/components/Blog.vue ./node_modules/vuepress-theme-reco/lib/client/components/Home
 
       - name: Build Packages
-        run: pnpm run build
+        run: npm run build
 
 #      - name: Build Docs
 #        run: pnpm run docs:build

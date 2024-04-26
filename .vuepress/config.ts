@@ -84,7 +84,7 @@ export default defineUserConfig({
           { text: "Java", link: "/docs/Java/extends/summary" },
           { text: "mysql", link: "/docs/mysql/mysql-conf" },
           { text: "docker", link: "/docs/docker/docker" },
-
+          { text: "server", link: "/docs/server/config/nginx/nginx-gzip" },
         ],
       },
       // { text: "about", link: "/docs/about/me" },
@@ -184,18 +184,6 @@ export default defineUserConfig({
             "extends/polymorphism",
           ],
         },
-        // {
-        //   text: "mysql",
-        //   children: [
-        //     "mysql/mysql-conf",
-        //   ],
-        // },
-        // {
-        //   text: "docker",
-        //   children: [
-        //     "docker/docker",
-        //   ],
-        // }
       ],
       "/docs/mysql/": [
         {
@@ -210,6 +198,15 @@ export default defineUserConfig({
           text: "docker",
           children: [
             "docker",
+          ],
+        },
+      ],
+      "/docs/server/": [
+        {
+          text: "nginx",
+          children: [
+            "config/nginx/nginx-gzip",
+            "config/nginx/nginx-location",
           ],
         },
       ],
