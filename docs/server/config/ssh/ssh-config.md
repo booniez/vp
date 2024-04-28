@@ -16,7 +16,10 @@ categories:
 打开一个终端或命令提示符，并运行以下命令。当提示输入文件位置时，可以按Enter键接受默认值。如果已存在密钥对，这将覆盖它们，因此如果你已有密钥对且不希望覆盖，应跳过这步。
 
 ```bash
+# 方式1
 ssh-keygen
+#方式2
+ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
 ```
 
 运行上述命令时，你会看到：
@@ -30,7 +33,7 @@ Enter file in which to save the key (/your/home/directory/.ssh/id_rsa):
 
 ### 2. 将公钥添加到远程服务器
 
-生成密钥对后，你需要将公钥(`id_rsa.pub`)添加到远程服务器的`~/.ssh/authorized_keys`文件。这可以通过`ssh-copy-id`命令简化完成。如果你的远程服务器用户名是`username`，服务器地址是`server_address`，运行：
+生成密钥对后，你需要将公钥(`~/.ssh/id_rsa.pub`)添加到远程服务器的`~/.ssh/authorized_keys`文件。这可以通过`ssh-copy-id`命令简化完成。如果你的远程服务器用户名是`username`，服务器地址是`server_address`，运行：
 
 ```bash
 ssh-copy-id username@server_address
