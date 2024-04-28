@@ -166,7 +166,8 @@ export default defineUserConfig({
         {
           text: "iOS方面",
           children: [
-            "summary"
+            "summary",
+            "iOS-photo-backup",
           ],
         },
       ],
