@@ -178,6 +178,7 @@ export default defineUserConfig({
               text: "面试",
               children: [
                 "interview/thread",
+                "interview/class-struct",
               ]
               // "summary",
 
