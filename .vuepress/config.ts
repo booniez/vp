@@ -166,8 +166,22 @@ export default defineUserConfig({
         {
           text: "iOS方面",
           children: [
-            "summary",
-            "iOS-photo-backup",
+            {
+              text: "项目随记",
+              children: [
+                "iOS-photo-backup",
+              ]
+              // "summary",
+
+            },
+            {
+              text: "面试",
+              children: [
+                "interview/thread",
+              ]
+              // "summary",
+
+            },
           ],
         },
       ],
