@@ -22,12 +22,16 @@ docker images
 - 2. 导出镜像
 ```shell
 docker save -o next.tar yidadaa/chatgpt-next-web:latest
+gzip next.tar
+
+# 或者
+docker save yidadaa/chatgpt-next-web:latest | gzip > next.tar.gz
+
 ```
-- 3. 将 next.tar 传输到服务器上面
+- 3. 将 next.tar.gz 传输到服务器上面
 - 4. 加载镜像
     
 ```shell
-gzip next.tar
 gunzip -c next.tar.gz | docker load
 ```
 
