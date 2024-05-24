@@ -38,6 +38,9 @@ gunzip -c next.tar.gz | docker load
 此时就可以丝滑的操作了，不用忍受服务器上面半天拉去不下来镜像的烦恼。
 
 ### 清理空间？
+
+参考原始文档 https://docs.docker.com/reference/cli/docker/image/prune/
+
 - 1. 移除所有没有容器使用的镜像
     
 ```bash

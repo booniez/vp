@@ -179,6 +179,12 @@ export default defineUserConfig({
             "interview/alipay-01",
           ]
         },
+        {
+          text: "开发相关",
+          children: [
+            "naming-conventions",
+          ]
+        },
       ],
       "/docs/Java/": [
         {
