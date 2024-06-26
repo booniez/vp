@@ -44,7 +44,7 @@ KVC、KVO、动态代理（运行时创建类和对象）、AOP（在方法前�
 
 KVC 通过对 NSObject 进行扩展，让所有继承自 NSObject 的都支持了 KVC，比如 NSArray、NSDictionary、NSMutableDictionary、NSOrderedSet、NSSet
 常见的方法：
-1. accessInstanceVariablesDirectly  默认为YES。 如果返回为YES,如果没有找到 set<Key> 方法的话, 会按照_key, _isKey, key, isKey的顺序搜索成员变量, 返回NO则不会搜索
+1. accessInstanceVariablesDirectly 默认为YES。如果返回为YES,如果没有找到``set<Key>``方法的话，会按照``_key``, ``_isKey``, ``key``, ``isKey``的顺序搜索成员变量, 返回NO则不会搜索
 2. validateValue 键值验证, 可以通过该方法检验键值的正确性, 然后做出相应的处理
 3. valueForUndefinedKey 如果key不存在, 并且没有搜索到和key有关的字段, 会调用此方法, 默认抛出异常。两个方法分别对应 get 和 set 的情况
 
