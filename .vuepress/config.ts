@@ -177,7 +177,7 @@ export default defineUserConfig({
             "interview/class-struct",
             "interview/thread",
             "interview/alipay-01",
-            "interview/iOS-inter",
+            "interview/inter",
           ]
         },
         {
