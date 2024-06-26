@@ -29,7 +29,7 @@ struct 是值类型，在进行变量传递的时候，会进行值拷贝。正�
 大概就是 通过 ``弱引用``表来记录 weak 修饰的属性。当声明的时候， runtime 将属性注册到 ``弱引用``表里面
 然后在这个引用对象释放的时候，runtime 会注销这个引用关系，并将属性置为 nil。在这个过程中 ``弱引用``表至关重要
 
-参考连接: https://www.bilibili.com/read/cv26937327/
+[参考连接](https://www.bilibili.com/read/cv26937327/): https://www.bilibili.com/read/cv26937327/
 
 ### 4. runtime 的使用、消息转发机制
 runtime 是一套运行时机制，
@@ -38,7 +38,7 @@ runtime 是一套运行时机制，
 如果消息还没有被处理，runtime将根据 方法签名生成 NSInvocation，最后调用 forwardInvocation 处理消息
 
 KVC、KVO、动态代理（运行时创建类和对象）、AOP（在方法前后插入自定义的东西）
-参考资料：https://juejin.cn/post/6844904079957688328
+[参考资料](https://juejin.cn/post/6844904079957688328)：https://juejin.cn/post/6844904079957688328
 
 ### 5. KVC 相关
 
@@ -60,7 +60,7 @@ getter 的时候
 3. 如果都没找到，则 valueForUndefinedKey 抛出异常，如果自己实现，则不异常
 
 如果自己实现，则实现这个过程就好了
-参考资料：https://juejin.cn/post/6844904086744104968#heading-11
+[参考资料](https://juejin.cn/post/6844904086744104968#heading-11)：https://juejin.cn/post/6844904086744104968#heading-11
 
 
 
