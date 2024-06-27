@@ -62,5 +62,60 @@ getter 的时候
 如果自己实现，则实现这个过程就好了
 [参考资料](https://juejin.cn/post/6844904086744104968#heading-11)：https://juejin.cn/post/6844904086744104968#heading-11
 
+### 6. KVO 相关
 
+在 init 的时候添加观察者，在 dealloc 的时候移除观察者。如果不移除，比如之前的观察者还在，会有野指针错误。
+KVO 是动态的生成了一个子类，在添加观察者过后，会改变原来的 isa，子类里面重写 setter 方法
+[参考资料](https://juejin.cn/post/6844904090569277447)：https://juejin.cn/post/6844904090569277447
 
+### 7. 视图 a 上的按钮超出一部分，让超出的部分响应点击
+
+手动实现 hitTest 方法，判断点击的坐标是否在按钮上，然后返回按钮
+
+### 8. 动态库、静态库
+
+动态库在编译的时候不会被拷贝到目标程序，目标程序只会存储一个动态引用
+动态库是编译链接的最终产物，无法优化，需要拷贝到frameworks文件夹中，会增加ipa包体积
+动态库不能超过6个
+[参考资料](https://juejin.cn/post/7049803824214573086)
+
+### 9. iOS 中国的锁
+
+互斥锁、自旋锁
+互斥锁(Mutual exclusion，缩写Mutex)防止两条线程同时对同一公共资源(比如全局变量)进行读写的机制。当获取锁操作失败时，线程会进入睡眠，等待锁释放时被唤醒
+互斥锁 又分为递归锁和非递归锁。递归锁可以多次重新进入
+
+互斥锁会让线程休眠，但是自旋锁不会休眠。因此自旋锁的效率更高
+
+自旋锁：OSspinlock、atomic、读写锁
+atomic 的原子性就是依赖于自旋锁 spinlock。但是由于安全性，后面被 os_unfair_lock 代替
+atomic 也只能保证读写安全，不能保证数据安全
+读写锁 也是一种自旋锁
+
+互斥锁：pthread_mutex、@synchronized（递归）、NSLock（非递归）、NSRecursiveLock（递归）、dispatch_semaphore、NSCondition、os_unfair_lock
+
+@synchronized 是一个递归锁，可以保证锁的唯一性
+
+普通场景下涉及到线程安全，可以用NSLock
+循环调用时用NSRecursiveLock
+循环调用且有线程影响时，请注意死锁，如果有死锁问题请使用@synchronized
+
+### 10. GCD 死锁问题
+
+会发生死锁的代码。
+```
+let queue = DispatchQueue(label: "xxx") // 串行队列
+        print("task 1")
+        
+        queue.async {
+            print("task 2")
+            queue.sync {
+                print("task 3")
+            }
+            print("task 4")
+        }
+        print("task 5")
+```
+原因是当前队列是一个串行队列，首先加入 task1，然后是 async 然后是 task5。
+因为是主队列，线 task1、然后 task5 然后 async。
+async 里面因为是串行队列。所以先 task2 ，然后是 sync。此时回发生阻塞，等待 queue 队列上其他的任务完成，也就是 async 完成。但是  async 里面又在等待同步。所以互相等待，死锁
