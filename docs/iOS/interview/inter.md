@@ -153,6 +153,21 @@ async 里面因为是串行队列。所以先 task2 ，然后是 sync。此时�
 
 ### Java 线程数量配置
 
+Java 5中线程池：
+1。 newCachedThreadPool 创建一个可缓存的线程池，若线程数超过处理所需，缓存一段时间后会回收，若线程数不够，则新建线程。
+2。newFixedThreadPool 创建一个固定大小的线程池，可控制并发的线程数，超出的线程会在队列中等待
+3。 newScheduledThreadPool 创建一个周期性的线程池，支持定时及周期性执行任务。
+4。newSingleThreadExecutor 创建一个单线程的线程池，可保证所有任务按照指定顺序(FIFO, LIFO, 优先级)执行
+5。 ThreadPoolExecutor 自定义
+
+线程池参数：核心线程数量、最大线程数量、空闲线程存活时间、时间单位、队列、工厂、拒绝策略
+拒绝策略：
+1。 AbortPolicy 拒绝抛出异常
+2。 CallerRunsPolicy 使用当前线程来执行次任务 业务中通常用这个
+3。 DiscardOldestPolicy 放弃头部最旧的，来执行
+4。 DiscardPolicy 忽略抛弃此任务
+[参考资料](https://www.cnblogs.com/vipstone/p/15983907.html)：https://www.cnblogs.com/vipstone/p/15983907.html
+
 线程数 = CPU 核心数 * (1 + IO 耗时/ CPU 耗时)
 线程数 = CPU 核心数 / (1 - 阻塞系数)
 其中计算密集型阻塞系数为 0，IO 密集型阻塞系数接近 1，一般认为在 0.8 ~ 0.9 之间。比如 2 核 CPU，按照公式就是 2 / ( 1 - 0.9 ) = 20 个线程数
@@ -176,3 +191,47 @@ async 里面因为是串行队列。所以先 task2 ，然后是 sync。此时�
 
 嵌套类型：
 NESTED 如果有事务，则嵌套在里面，如果没有，则新建事务
+
+### redis 
+
+redis 常见的数据类型：
+1. String
+2. set 
+3. list
+4. hash
+5. zset 有序集合
+
+### spring
+IOC：容器化，也就是依赖注入
+通过配置文件读取 bean 的定义信息、然后进行增加。过后通过 aop 创建 bean 对象
+bean对象的生命周期：实例化、初始化、使用、销毁
+
+aop 使用，先定义注解，然后写切面。实现 around 方法，拿到 point 去解析
+
+### 索引失效
+
+1. 为遵循左前缀匹配 %abc% 会失效，但是 abc% 不会失效
+2. 对索引字段进行了计算
+3. 对索引字段使用了函数
+4. 对索引字段进行了类型转换
+5. 联合索引不完全使用失效
+6. 不等于 让索引失效
+7. 使用 like %abc 失效，模糊匹配的时候，通配符不能再最前面
+8. is not null 索引字段，让 索引失效
+9. OR 前后存在非索引的列。
+
+### 缓存不一致的问题
+
+缓存更新两种方案
+1. 先删除旧的缓存，更新数据库 。问题是如果缓存在 a 线程已经删除，b线程读取缓存是空的，就会去读数据库，然后更新缓存。缓存就是旧的
+2. 先更新数据库，在更新缓存。 a线程更新了数据库，没有更新缓存，b线程就会读到旧的缓存。但是更新缓存很快，影响不大，如果需要，可以使用锁，对缓存的操作变成串行
+
+### 定位CPU高占用
+1。 阿尔萨斯 thread -n 3 -i 1000 查找前三个线程，然后查栈信息定位代码
+2。 top 定位进程 pid ，top -Hp 进程id 定位线程信息。最后通过 jstack 进程id | grep -a 200 线程id
+
+### ThreadLocal
+
+threadlocal 为了解决子线程的问题，诞生了 InheritableThreadLocal，他会在生成子线程的时候将 threadlocal 传递给子线程，但是往往我们并不会手动初始化子线程，而是使用了线程池,
+这个时候就诞生了进一步的 TransmittableThreadLocal 俗称 ttl。
+
