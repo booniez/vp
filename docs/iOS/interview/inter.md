@@ -235,3 +235,5 @@ aop 使用，先定义注解，然后写切面。实现 around 方法，拿到 p
 threadlocal 为了解决子线程的问题，诞生了 InheritableThreadLocal，他会在生成子线程的时候将 threadlocal 传递给子线程，但是往往我们并不会手动初始化子线程，而是使用了线程池,
 这个时候就诞生了进一步的 TransmittableThreadLocal 俗称 ttl。
 
+threadlocal 内存泄漏是因为，每一个 thread 维护一个 threadlocalmap，key 是 若引用的 threadlocal实例，然后 key 会被 GC，就造成了 key 没了，value还在
+要想 value 也消失，需要 thread 销毁
