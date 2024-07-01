@@ -146,6 +146,24 @@ async 里面因为是串行队列。所以先 task2 ，然后是 sync。此时�
 3. 减少透明的情况。
 4. 使用了 shouldRasterize 光栅化
 
+### 14. 常见的异常
+EXC_BAD_ACCESS 内存访问问题
+
+SIGABRT 终止信号  
+多线程访问可变数组, 可变字典, 多线程添加/删除 元素导致
+一种是由于方法调用错误(调用了不能调用的方法)
+一种是由于数组访问越界, 这样一般是先抛异常, 从异常就可以明显看出错误原因
+
+SIGSEGV 无效的内存引用
+
+EXC_ARITMETHIC 除以0或整数溢出/下溢引发的异常
+EXC_BAD_INSTRUCTION  --- 线程试图访问非法/无效的指令或将无效的参数（操作数）传递给指令
+
+### 音频录制
+
+AVAudioRecorder iOS13 以上版本
+
+
 
 
 
@@ -239,3 +257,15 @@ threadlocal 为了解决子线程的问题，诞生了 InheritableThreadLocal，
 
 threadlocal 内存泄漏是因为，每一个 thread 维护一个 threadlocalmap，key 是 若引用的 threadlocal实例，然后 key 会被 GC，就造成了 key 没了，value还在
 要想 value 也消失，需要 thread 销毁
+
+### rabbitmq
+
+创建 利用队列 ttl 和 死信交换机实现倒计时
+怎么防丢失，利用消息id验证，可以利用 rabbitmq 的 confirm ，也可以用 retrun。
+[参考资料](https://juejin.cn/post/7146587225516408839)：https://juejin.cn/post/7146587225516408839
+
+防止重复消费，需要做验证。消费了就不再消费了
+
+如何实现每个消费者都消费，不指定队列名字，用交换机，绑定route key，发送到 key上面。就可以每个消费者都消费。
+如何实现只有一个消费者消费，就指定队列名字进行消费
+
