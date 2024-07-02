@@ -178,6 +178,7 @@ export default defineUserConfig({
             "interview/thread",
             "interview/alipay-01",
             "interview/inter",
+            "interview/inter-bank-lanying",
           ]
         },
         {

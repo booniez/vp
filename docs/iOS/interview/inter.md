@@ -269,3 +269,8 @@ threadlocal 内存泄漏是因为，每一个 thread 维护一个 threadlocalmap
 如何实现每个消费者都消费，不指定队列名字，用交换机，绑定route key，发送到 key上面。就可以每个消费者都消费。
 如何实现只有一个消费者消费，就指定队列名字进行消费
 
+### Netty 
+
+NIO 三大核心：通道 channel、缓冲 buffer、选择器 Selector
+
+
