@@ -8,8 +8,6 @@ categories:
 ---
 
 ## iOS
-
-
 1. runtime 的应用
 2. 多线程的应用
 3. kvo ，可变数组的监听

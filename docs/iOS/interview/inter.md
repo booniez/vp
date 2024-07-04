@@ -273,4 +273,10 @@ threadlocal 内存泄漏是因为，每一个 thread 维护一个 threadlocalmap
 
 NIO 三大核心：通道 channel、缓冲 buffer、选择器 Selector
 
+### 为什么要用 spring 
+
+### spring 怎么解决互相依赖的 bean 的加载
+
+### tomcat的maxTreads参数与cpu线程数有什么关系？
+
 
