@@ -18,7 +18,7 @@ categories:
 8. 上架、隐私、合规之类的
 9. iskindof 、ismemberof、is 的关系、区别
 
-## iOS 优悦数创-01
+## iOS you yue 数创-01
 
 ## wei可爱-01
 1. 聊聊 OC 和 Swift 有啥不一样的
