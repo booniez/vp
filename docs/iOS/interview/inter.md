@@ -163,6 +163,11 @@ EXC_BAD_INSTRUCTION  --- 线程试图访问非法/无效的指令或将无效的
 
 AVAudioRecorder iOS13 以上版本
 
+### 通知
+通知注册流程，先在 named 里面查找 name，然后拿到字典 n，然后以 object 为 key 找到 obs 链表，最后将 obs 对象存进去
+如果没有 name，将 obs 存到 nameless 里面去
+
+
 
 
 
