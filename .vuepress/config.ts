@@ -68,6 +68,7 @@ export default defineUserConfig({
     author: "booniez",
     authorAvatar: "/WX20240411-145310@2x.png",
     lastUpdatedText: "最后更新",
+    password: 'db550a644f4ad2fa8196e92b427e049e',
     // lastUpdated: "最后更新",
     // series 为原 sidebar
     // autoSetSeries: true,
