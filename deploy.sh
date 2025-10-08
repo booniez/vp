@@ -29,7 +29,7 @@ git commit -m "$commit_message"
 
 # 5. 推送到远程仓库的main分支
 git push vp main
-git push vp_gitee main
+# git push vp_gitee main
 
 echo "Pushed to origin main successfully."
 
