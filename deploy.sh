@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # 1. 切换到你的git仓库的目录
-cd /Users/yl/Documents/vp
+cd $PWD
 
 # 2. 执行git add命令
 git add .
